@@ -1,0 +1,10 @@
+version: '3'
+services:
+  elasticmq:
+    image: softwaremill/elasticmq
+    ports:
+      - "9324:9324"
+    environment:
+      - JAVA_OPTS=-Dconfig.file=/opt/elasticmq/custom.conf
+    volumes:
+      - ./custom.conf:/opt/elasticmq/custom.conf
